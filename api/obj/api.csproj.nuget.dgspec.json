@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DOCUMENTOS\\Cursos\\ciklum\\api\\api.csproj": {}
+    "E:\\DOCUMENTOS\\Cursos\\ciklum\\pizza\\api\\api.csproj": {}
   },
   "projects": {
-    "E:\\DOCUMENTOS\\Cursos\\ciklum\\api\\api.csproj": {
+    "E:\\DOCUMENTOS\\Cursos\\ciklum\\pizza\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DOCUMENTOS\\Cursos\\ciklum\\api\\api.csproj",
+        "projectUniqueName": "E:\\DOCUMENTOS\\Cursos\\ciklum\\pizza\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "E:\\DOCUMENTOS\\Cursos\\ciklum\\api\\api.csproj",
+        "projectPath": "E:\\DOCUMENTOS\\Cursos\\ciklum\\pizza\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Cursos\\.nuget\\packages\\",
-        "outputPath": "E:\\DOCUMENTOS\\Cursos\\ciklum\\api\\obj\\",
+        "outputPath": "E:\\DOCUMENTOS\\Cursos\\ciklum\\pizza\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cursos\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.SpaServices": {
+              "target": "Package",
+              "version": "[3.1.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
