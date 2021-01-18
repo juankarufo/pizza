@@ -1,3 +1,18 @@
 # Editor
 .vscode
 api/obj/Debug/net5.0/api.csprojAssemblyReference.cache
+api/api.csproj
+api/bin/Debug/net5.0/api.deps.json
+api/bin/Debug/net5.0/api.dll
+api/bin/Debug/net5.0/api.pdb
+api/bin/Debug/net5.0/ref/api.dll
+api/obj/api.csproj.nuget.dgspec.json
+api/obj/project.assets.json
+api/obj/project.nuget.cache
+api/obj/Debug/net5.0/api.assets.cache
+api/obj/Debug/net5.0/api.csproj.CoreCompileInputs.cache
+api/obj/Debug/net5.0/api.csproj.FileListAbsolute.txt
+api/obj/Debug/net5.0/api.csprojAssemblyReference.cache
+api/obj/Debug/net5.0/api.dll
+api/obj/Debug/net5.0/api.pdb
+api/obj/Debug/net5.0/ref/api.dll
