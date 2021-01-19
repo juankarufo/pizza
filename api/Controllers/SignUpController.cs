@@ -14,8 +14,6 @@ namespace api.Controllers
         [HttpPost]
         public string Get(string Login,string Password)
         {
-            Console.WriteLine("Login post request");
-
             if( (Login != null 
                 || Password != null)
                 && !api.Controllers.UserController.UserList.ContainsKey(Login)
@@ -23,6 +21,7 @@ namespace api.Controllers
             {
                 api.Controllers.UserController.UserList.Add(Login,Password);
                 api.Controllers.VoteController.VotesList.Add(Login,0);
+                Console.WriteLine("signup OK"); 
                 return "signup OK";
             }
 

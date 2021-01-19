@@ -31,5 +31,16 @@ namespace api.Controllers
             .ToArray();
         }
 
+        [HttpPost]
+        public string Get(string Login)
+        {
+            if( VotesList.ContainsKey(Login))
+            {
+                VotesList[Login] = VotesList[Login] + 1;
+                return "ok";
+            }
+            return "KO";
+        }
+
     }
 }
