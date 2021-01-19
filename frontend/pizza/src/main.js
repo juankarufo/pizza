@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Home from './Home.vue'
-import Pizzas from './Pizzas.vue'
+import Home from './components/Home.vue'
+import Pizzas from './components/Pizzas.vue'
 
 Vue.config.productionTip = false
 
