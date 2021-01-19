@@ -17,8 +17,8 @@ namespace api.Controllers
         {
             Console.WriteLine("Login post request");
 
-            if( Login != null 
-                && Password != null 
+            if( (Login != null 
+                || Password != null) 
                 && api.Controllers.UserController.UserList.ContainsKey(Login)
                 && api.Controllers.UserController.UserList[Login] == Password
             )
