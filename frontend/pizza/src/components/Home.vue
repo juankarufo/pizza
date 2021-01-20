@@ -1,6 +1,8 @@
 <template>
 <div>
     <h1>{{texto}}</h1>
+    <pizzas></pizzas>
+    <chart></chart>
 </div>
 </template>
 
