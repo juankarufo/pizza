@@ -33,3 +33,11 @@ export default {
   }
 }
 </script>
+
+
+<style>
+  .chart {
+    max-width: 600px;
+    margin:  150px auto;
+  }
+</style>

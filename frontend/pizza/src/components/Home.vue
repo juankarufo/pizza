@@ -1,8 +1,9 @@
 <template>
 <div>
     <h1>{{texto}}</h1>
-    <pizzas></pizzas>
-    <chart></chart>
+     <div class="chart">
+        <chart></chart>
+    </div>
 </div>
 </template>
 
@@ -12,7 +13,7 @@
 
        data() {
            return {
-               texto: 'Home component'
+               texto: 'Home Pizza Lovers'
            }
        }
    }
