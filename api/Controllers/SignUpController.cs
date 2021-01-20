@@ -12,15 +12,15 @@ namespace api.Controllers
     public class SignUpController : ControllerBase
     {
         [HttpPost]
-        public string Get(string Login,string Password)
+        public string Create([FromBody]User user)
         {
-            if( (Login != null 
-                || Password != null)
-                && !api.Controllers.UserController.UserList.ContainsKey(Login)
+            if( (user.Login != null 
+                || user.Password != null)
+                && !api.Controllers.UserController.UserList.ContainsKey(user.Login)
             )
             {
-                api.Controllers.UserController.UserList.Add(Login,Password);
-                api.Controllers.VoteController.VotesList.Add(Login,0);
+                api.Controllers.UserController.UserList.Add(user.Login,user.Password);
+                api.Controllers.VoteController.VotesList.Add(user.Login,0);
                 Console.WriteLine("signup OK"); 
                 return "signup OK";
             }
