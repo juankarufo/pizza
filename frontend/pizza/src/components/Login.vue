@@ -6,7 +6,9 @@
     <input v-model="inputpass" v-if="!logged" placeholder="password">
     <spam v-if="logged">Welcome {{username}}!!</spam>
 
-    
+    <vote :logged="logged" :username="username"></vote>
+
+
 
 </div>
 </template>
