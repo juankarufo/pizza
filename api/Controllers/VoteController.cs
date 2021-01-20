@@ -14,7 +14,7 @@ namespace api.Controllers
         //user and password list
         public static Dictionary<string, int> VotesList = new Dictionary<string, int>(){
             {"user1@user.com", 4},
-            {"user2@user.com", 2},
+            {"user2@user.com", 0},
             {"user3@user.com", 3}
         };
 
@@ -32,11 +32,13 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public string Get(string Login)
+        public string Get([FromBody]User user)
         {
-            if( VotesList.ContainsKey(Login))
+            Console.WriteLine("vote request");
+            Console.WriteLine(user.Login);
+            if( VotesList.ContainsKey(user.Login))
             {
-                VotesList[Login] = VotesList[Login] + 1;
+                VotesList[user.Login] = VotesList[user.Login] + 1;
                 return "ok";
             }
             return "KO";
