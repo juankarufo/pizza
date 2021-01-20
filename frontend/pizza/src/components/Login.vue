@@ -4,7 +4,9 @@
     <button v-if="!logged" @click="signUp()">Sign Up</button>
     <input v-model="inputlogin" v-if="!logged" placeholder="user">
     <input v-model="inputpass" v-if="!logged" placeholder="password">
-    <spam v-else>{{username}}</spam>
+    <spam v-if="logged">Welcome {{username}}!!</spam>
+
+    
 
 </div>
 </template>
@@ -17,7 +19,10 @@ const axios = require('axios');
        data() {
            return {
                logged: false,
-               username: ''
+               username: '',
+               inputlogin: null,
+               inputpass: null
+
 
            }
        },
@@ -27,10 +32,13 @@ const axios = require('axios');
                 let postBody = { Login: this.inputlogin, Password: this.inputpass};
                 axios.post('https://localhost:5001/login', postBody)
                 .then((response) => {
-                    this.username = response.data;
-                    console.log("log ok:");
-                    //console.log(response.data);
-                    //"signup OK"
+                    if(response.data == 'login ok')
+                    {
+                        this.username = this.inputlogin;
+                        this.logged = true;
+                        console.log("added and logged user:");
+                        console.log(response.data);
+                    }
                 })
                 .catch((response) => {
                     console.log("login error:");
@@ -43,9 +51,13 @@ const axios = require('axios');
                 let postBody = { Login: this.inputlogin, Password: this.inputpass};
                 axios.post('https://localhost:5001/signup', postBody)
                 .then((response) => {
-                    this.username = response.data;
-                    console.log("log ok:");
-                    //console.log(response.data);
+                    if(response.data == 'signup OK')
+                    {
+                        this.username = this.inputlogin;
+                        this.logged = true;
+                        console.log("added and logged user:");
+                        console.log(response.data);
+                    }
                 })
                 .catch((response) => {
                     console.log("login error:");
