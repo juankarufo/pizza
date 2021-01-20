@@ -1,41 +1,35 @@
-<template>
-<div>
-    <ul v-if="votes">
-        <li v-for="(vote,index) in votes" v-bind:key="index">
-            <span>{{vote.user}}</span>
-            <span>{{vote.votes}}</span>
-        </li>
-    </ul>
-</div>
-</template>
-
 <script>
-    const axios = require('axios');
-   export default {
-       name: 'chart',
+import {  Bar, mixins } from 'vue-chartjs'
+import axios from 'axios'
 
-       mounted (){
-           this.getVotes();
-       },
-
-       data() {
-           return {
-               votes: null
-           }
-       },
-
-       methods: {
-           getVotes(){
-               
-               axios.get('https://localhost:5001/vote')
-                .then((response) => {
-                    this.votes = response.data;
-                })
-                .catch((response) => {
-                    console.log("error:");
-                    console.log(response.data.description);
-                });
-           }
-       }
-   }
+export default {
+  mixins: [mixins.reactiveData],
+  data() {
+    return {
+      chartData: ''
+    }
+  },
+  extends: Bar,
+  mounted() {
+    this.renderChart(this.chartData)
+  },
+  created() {
+    axios.get('https://localhost:5001/vote')
+      .then(response => {
+        // JSON responses are automatically parsed.
+        const responseData = response.data
+        this.chartData = {
+          labels: responseData.map(item => item.user),
+          datasets: [{
+            label: 'Votes',
+             backgroundColor: '#f87979',
+             data: responseData.map(item => item.votes)
+          }]
+        }
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+  }
+}
 </script>
